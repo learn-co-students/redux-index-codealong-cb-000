@@ -3,16 +3,12 @@ import { connect } from 'react-redux'
 
 class CreateTodo extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      text: '',
-    };
-  }
+  state = { text: '' };
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState({text: ''})
   }
 
   handleChange(event) {
